@@ -1,4 +1,4 @@
 Admin::Engine.routes.draw do
-  root "admin_setup#index"
-  resources :admin_setup, only: [:index, :edit, :update]
+  root "setups#index"
+  resources :setups, only: :index
 end

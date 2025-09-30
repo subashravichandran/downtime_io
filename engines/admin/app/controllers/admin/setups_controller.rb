@@ -1,5 +1,5 @@
 module Admin
-  class AdminSetupController < ApplicationController
+  class SetupsController < ApplicationController
     def index
       @setups = Setup.all
     end
