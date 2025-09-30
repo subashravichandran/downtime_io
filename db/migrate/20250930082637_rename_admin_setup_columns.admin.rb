@@ -1,0 +1,7 @@
+# This migration comes from admin (originally 20250930082411)
+class RenameAdminSetupColumns < ActiveRecord::Migration[8.0]
+  def change
+    rename_column :admin_setups, :setup_key, :site_name
+    rename_column :admin_setups, :setup_value, :url
+  end
+end

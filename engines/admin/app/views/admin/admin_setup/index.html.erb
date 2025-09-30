@@ -1,1 +1,4 @@
-<h1>Index</h1>
+<h1>Admin Configs</h1>
+<% @setups.each do |setup| %>
+  <li><%= setup.site_name%>: <%= setup.url%></li>
+<% end %>

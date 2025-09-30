@@ -56,4 +56,5 @@ group :development do
   gem "web-console"
 end
 
+gem 'pry'
 gem "admin", path: "engines/admin"
