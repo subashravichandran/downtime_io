@@ -1,0 +1,14 @@
+<h1>New config</h1>
+
+<%= form_with(model: @setup, url: setups_path) do |f| %>
+  <p>
+    <%= f.label :site_name%><br>
+    <%= f.text_field :site_name%>
+  </p>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url%>
+  </p>
+
+  <%= f.submit 'Create' %>
+<% end %>

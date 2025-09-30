@@ -1,4 +1,9 @@
 <h1>Admin Configs</h1>
 <% @setups.each do |setup| %>
-  <li><%= setup.site_name%>: <%= setup.url%></li>
+  <li>
+    <%= setup.site_name%>: <%= setup.url%>
+    <%= button_to "DEL", setup_path(setup), method: :delete, form: { style: "display:inline" } %>
+  </li>
+
+  <%= link_to "New Config", new_setup_path%>
 <% end %>
