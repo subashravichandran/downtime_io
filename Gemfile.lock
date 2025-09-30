@@ -1,3 +1,9 @@
+PATH
+  remote: engines/admin
+  specs:
+    admin (0.1.0)
+      rails (>= 8.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -347,6 +353,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  admin!
   bootsnap
   brakeman
   debug
