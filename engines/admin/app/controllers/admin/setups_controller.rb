@@ -1,5 +1,7 @@
 module Admin
   class SetupsController < ApplicationController
+    before_action :fetch_setup, only: [:edit, :destroy, :update]
+
     def index
       @setups = Setup.all
     end
@@ -17,12 +19,7 @@ module Admin
       end
     end
 
-    def edit
-      @setup = Setup.find(params[:id])
-    end
-
     def update
-      @setup = Setup.find(params[:id])
       if @setup.update(setup_params)
         redirect_to setups_path, notice: 'Config updated successfully'
       else
@@ -31,7 +28,6 @@ module Admin
     end
 
     def destroy
-      @setup = Setup.find(params[:id])
       @setup.destroy
       redirect_to setups_path, notice: 'Config deleted'
     end
@@ -40,6 +36,10 @@ module Admin
 
     def setup_params
       params.require(:setup).permit(:site_name, :url)
+    end
+
+    def fetch_setup
+      @setup = Setup.find(params[:id])
     end
   end
 end
