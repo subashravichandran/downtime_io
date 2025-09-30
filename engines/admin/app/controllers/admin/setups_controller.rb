@@ -17,6 +17,19 @@ module Admin
       end
     end
 
+    def edit
+      @setup = Setup.find(params[:id])
+    end
+
+    def update
+      @setup = Setup.find(params[:id])
+      if @setup.update(setup_params)
+        redirect_to setups_path, notice: 'Config updated successfully'
+      else
+        render :edit
+      end
+    end
+
     def destroy
       @setup = Setup.find(params[:id])
       @setup.destroy

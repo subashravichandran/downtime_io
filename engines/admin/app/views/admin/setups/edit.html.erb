@@ -1,0 +1,14 @@
+<h1>Edit config</h1>
+
+<%= form_with(model: @setup) do |f| %>
+  <p>
+    <%= f.label :site_name %>
+    <%= f.text_field :site_name %>
+  </p>
+
+  <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </p>
+  <%= f.submit 'Update' %>
+<% end %>

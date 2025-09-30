@@ -3,6 +3,7 @@
   <li>
     <%= setup.site_name%>: <%= setup.url%>
     <%= button_to "DEL", setup_path(setup), method: :delete, form: { style: "display:inline" } %>
+    <%= button_to "EDIT", edit_setup_path(setup), method: :get, form: { style: "display:inline" } %>
   </li>
 
   <%= link_to "New Config", new_setup_path%>
