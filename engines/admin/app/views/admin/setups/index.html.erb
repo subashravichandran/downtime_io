@@ -6,6 +6,7 @@
       <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">S.No</th>
       <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Site Name</th>
       <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">URL</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Status</th>
       <th style="padding: 12px; text-align: center; border-bottom: 2px solid #ddd;">Action</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
         <td style="padding: 12px;"><%= index + 1 %></td>
         <td style="padding: 12px;"><%= setup.site_name %></td>
         <td style="padding: 12px;"><%= link_to setup.url, setup.url, target: "_blank", style: "color:#0073e6; text-decoration:none;" %></td>
+        <td style="padding: 12px;"><%= setup.active ? 'Active' : 'Disabled' %></td>
         <td style="padding: 12px; text-align: center;">
           <%= link_to "Edit", edit_setup_path(setup), 
                 style: "padding:6px 12px; background:#4CAF50; color:#fff; border:none; border-radius:4px; text-decoration:none; margin-right:8px; display:inline-block;" %>

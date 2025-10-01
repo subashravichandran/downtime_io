@@ -3,7 +3,7 @@ module Admin
     before_action :fetch_setup, only: [:edit, :destroy, :update]
 
     def index
-      @setups = Setup.all
+      @setups = Setup.all.order(id: :asc)
     end
 
     def new
@@ -35,7 +35,7 @@ module Admin
     private
 
     def setup_params
-      params.require(:setup).permit(:site_name, :url)
+      params.require(:setup).permit(:site_name, :url, :active)
     end
 
     def fetch_setup

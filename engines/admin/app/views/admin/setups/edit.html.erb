@@ -1,14 +1,40 @@
-<h1>Edit config</h1>
+<h1 style="margin-bottom: 20px;">Edit Config</h1>
 
-<%= form_with(model: @setup) do |f| %>
-  <p>
-    <%= f.label :site_name %>
-    <%= f.text_field :site_name %>
-  </p>
+<div style="max-width: 500px; background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <%= form_with(model: @setup, local: true) do |f| %>
+    
+    <div style="margin-bottom: 16px;">
+      <%= f.label :site_name, style: "display:block; font-weight:bold; margin-bottom:6px;" %>
+      <%= f.text_field :site_name, style: "width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;" %>
+    </div>
 
-  <p>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </p>
-  <%= f.submit 'Update' %>
-<% end %>
+    <div style="margin-bottom: 16px;">
+      <%= f.label :url, style: "display:block; font-weight:bold; margin-bottom:6px;" %>
+      <%= f.text_field :url, style: "width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;" %>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <%= f.label :active, "Active", style: "display:inline-block; font-weight:bold; margin-right:8px;" %>
+      <%= f.check_box :active %>
+    </div>
+
+    <% if @setup.errors.any? %>
+      <div style="margin-bottom: 20px; padding: 12px; background: #ffe6e6; border: 1px solid #ff9999; border-radius: 4px;">
+        <h4 style="margin: 0 0 10px 0; color: #cc0000;">
+          <%= pluralize(@setup.errors.count, "error") %> prevented this config from being saved:
+        </h4>
+        <ul style="margin: 0; padding-left: 20px; color: #cc0000;">
+          <% @setup.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div style="margin-top: 20px;">
+      <%= f.submit "Update", style: "padding:8px 16px; background:#4CAF50; color:#fff; border:none; border-radius:4px; cursor:pointer; margin-right:10px;" %>
+      <%= link_to "Cancel", setups_path, style: "padding:8px 16px; background:#ccc; color:#333; text-decoration:none; border-radius:4px;" %>
+    </div>
+
+  <% end %>
+</div>
