@@ -5,6 +5,8 @@ module Admin
     validates :site_name, presence: true
     validate :url_must_be_valid
 
+    has_many :server_lives, class_name: "ApiBase::ServerLife", dependent: :destroy
+
     private
 
     def normalize_url
