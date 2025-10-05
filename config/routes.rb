@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   mount Admin::Engine, at: "/admin"
+  mount ApiBase::Engine, at: "/api_base"
 end

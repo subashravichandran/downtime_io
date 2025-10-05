@@ -4,6 +4,12 @@ PATH
     admin (0.1.0)
       rails (>= 8.0.3)
 
+PATH
+  remote: engines/api_base
+  specs:
+    api_base (0.1.0)
+      rails (>= 8.0.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -359,6 +365,7 @@ PLATFORMS
 
 DEPENDENCIES
   admin!
+  api_base!
   bootsnap
   brakeman
   debug

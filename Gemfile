@@ -58,3 +58,4 @@ end
 
 gem 'pry'
 gem "admin", path: "engines/admin"
+gem "api_base", path: "engines/api_base"
